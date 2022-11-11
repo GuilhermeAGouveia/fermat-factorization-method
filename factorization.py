@@ -2,7 +2,33 @@ import math
 import sys
 
 sqrt_int = lambda x: int(math.sqrt(x))
- 
+
+# Fatoração do luizil
+def fatores_primos(n):
+    fatores = []
+    c = n
+    while ((c % 2 == 0)):
+    
+        fatores.append(2)
+        c = c / 2
+    
+    i = 3
+    while (i <= math.sqrt(c) + 1):
+    
+        if (c % i == 0):
+        
+            fatores.append(i)
+            c = c / i
+        
+        else:
+            i = i + 2
+    
+    if (c > 1):
+        fatores.append(c)
+    
+    return fatores
+   
+# Fatoração utilizando fermat
 def fermat(number):
     factors = []
     while number % 2 == 0:
